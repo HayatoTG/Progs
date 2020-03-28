@@ -13,11 +13,41 @@ namespace Mafia
     public partial class Form1 : Form
     {
         bool f = true;
-
+        string[] com = new string[] {"Камиль",
+            "Тимур",
+            "Андрей",
+            "Илназ",
+            "Никита",
+            "Миша",
+            "Даша",
+            "Саша",
+            "Маша",
+            "Сеня",
+            "Рустам",
+            "Данис",
+            "Айнур",
+            "Ленар",
+            "Вадим",
+            "Лилия" };
         public Form1()
         {
             InitializeComponent();
-            //comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+            //string[] com = new string[] {"Камиль",
+            //"Тимур",
+            //"Андрей",
+            //"Илназ",
+            //"Никита",
+            //"Миша",
+            //"Даша",
+            //"Саша",
+            //"Маша",
+            //"Сеня",
+            //"Рустам",
+            //"Данис",
+            //"Айнур",
+            //"Ленар",
+            //"Вадим",
+            //"Лилия" };
             comboBox1.Items.AddRange(new string[]{
             "Камиль",
             "Тимур",
@@ -106,6 +136,9 @@ namespace Mafia
 
         private void Button2_Click(object sender, EventArgs e)
         {
+
+
+
             try
             {
                 if (listBox1.Items.Count < 0)
@@ -127,16 +160,16 @@ namespace Mafia
 
                         if (z != q && z != s)
                         {
-                         textBox1.Text = listBox1.Items[a].ToString();
-                         textBox2.Text = listBox1.Items[z].ToString();
-                         textBox3.Text = listBox1.Items[q].ToString();
-                         textBox4.Text = listBox1.Items[s].ToString();
+                            textBox1.Text = listBox1.Items[a].ToString();
+                            textBox2.Text = listBox1.Items[z].ToString();
+                            textBox3.Text = listBox1.Items[q].ToString();
+                            textBox4.Text = listBox1.Items[s].ToString();
                         }
                     }
                 }
-              
+
             }
-            catch{}
+            catch { }
 
         }
 
