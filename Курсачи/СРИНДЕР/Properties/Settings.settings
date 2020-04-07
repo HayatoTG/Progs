@@ -26,5 +26,8 @@
     <Setting Name="agemin" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">18</Value>
     </Setting>
+    <Setting Name="genderfind" Type="System.String" Scope="User">
+      <Value Profile="(Default)">female</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

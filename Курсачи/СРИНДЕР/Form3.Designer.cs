@@ -56,6 +56,8 @@
         private System.Windows.Forms.NumericUpDown agemin;
         private System.Windows.Forms.Label labelmax;
         private System.Windows.Forms.Label labelmin;
-
+        private System.Windows.Forms.GroupBox groupboxfind;
+        private System.Windows.Forms.RadioButton genderfindmale;
+        private System.Windows.Forms.RadioButton genderfindfemale;
     }
 }

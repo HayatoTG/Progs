@@ -27,6 +27,7 @@ namespace СРИНДЕР
         {
             this.Controls.Clear();
             groupboxtheme = new GroupBox();
+            groupboxfind = new GroupBox();
             if (Properties.Settings.Default.theme == "светлая")
             {
                 this.BackColor = Color.FromArgb(230, 230, 230);
@@ -37,6 +38,7 @@ namespace СРИНДЕР
                 this.BackColor = Color.FromArgb(64, 64, 64);
                 this.ForeColor = Color.White;
                 groupboxtheme.ForeColor = Color.White;
+                groupboxfind.ForeColor = Color.White;
             }
 
             groupboxtheme.Location = new Point(30,30);
@@ -52,7 +54,6 @@ namespace СРИНДЕР
             radiodark.Location = new Point(10, 40);
             groupboxtheme.Controls.Add(radiolight);
             groupboxtheme.Controls.Add(radiodark);
-
             if (Properties.Settings.Default.theme == "светлая")
             {
                 radiolight.Checked = true;
@@ -62,32 +63,65 @@ namespace СРИНДЕР
                 radiodark.Checked = true;
             }
 
+           
+
+            groupboxfind.Location = new Point(30, 110);
+            groupboxfind.Width = 200;
+            groupboxfind.Height = 200;
+            groupboxfind.Text = "Параметры поиска";
+
             labelmax = new Label();
-            labelmax.Location = new Point(26,110);
+            labelmax.Location = new Point(35, 140);
             labelmax.Text = "Максимальный возраст поиска";
-            labelmax.Width = 250;
+            labelmax.Width = 160;
 
             labelmin = new Label();
-            labelmin.Location = new Point(27, 160);
+            labelmin.Location = new Point(35, 190);
             labelmin.Text = "Минимальный возраст поиска";
-            labelmin.Width = 250;
+            labelmin.Width = 160;
 
             agemax = new NumericUpDown();
-            agemax.Location = new Point(30,130);
+            agemax.Location = new Point(40, 160);
             agemax.Maximum = 80;
             agemax.Minimum = 18;
             agemax.Width = 40;
             agemax.Height = 25;
+            agemax.Value = Properties.Settings.Default.agemax;
             agemax.ValueChanged += ValueChanged;
 
             agemin = new NumericUpDown();
-            agemin.Location = new Point(30, 180);
+            agemin.Location = new Point(40, 210);
             agemin.Maximum = 80;
             agemin.Minimum = 18;
             agemin.Width = 40;
             agemin.Height = 25;
+            agemin.Value = Properties.Settings.Default.agemin;
             agemin.ValueChanged += ValueChanged;
 
+            genderfindmale = new RadioButton();
+            genderfindmale.Text = "Мужской";
+            genderfindmale.Location = new Point(10, 140);
+
+            genderfindfemale = new RadioButton();
+            genderfindfemale.Text = "Женский";
+            genderfindfemale.Location = new Point(10, 165);
+
+            if (Properties.Settings.Default.genderfind == "male")
+            {
+                genderfindmale.Checked = true;
+            }
+            if (Properties.Settings.Default.genderfind == "female")
+            {
+                genderfindfemale.Checked = true;
+            }
+
+
+            groupboxfind.Controls.Add(labelmax);
+            groupboxfind.Controls.Add(labelmin);
+            groupboxfind.Controls.Add(agemax);
+            groupboxfind.Controls.Add(agemin);
+            groupboxfind.Controls.Add(genderfindmale);
+            groupboxfind.Controls.Add(genderfindfemale);
 
 
             okbutton = new Button();
@@ -114,6 +148,7 @@ namespace СРИНДЕР
             this.Controls.Add(agemin);
             this.Controls.Add(labelmax);
             this.Controls.Add(labelmin);
+            this.Controls.Add(groupboxfind);
         }
         public void ValueChanged(object sender, EventArgs e)
         {
@@ -143,6 +178,14 @@ namespace СРИНДЕР
             }
             Properties.Settings.Default.agemax = Convert.ToInt32(agemax.Value);
             Properties.Settings.Default.agemin = Convert.ToInt32(agemin.Value);
+            if (genderfindmale.Checked == true)
+            {
+                Properties.Settings.Default.genderfind = "male";
+            }
+            if (genderfindfemale.Checked == true)
+            {
+                Properties.Settings.Default.genderfind = "female";
+            }
             Properties.Settings.Default.Save();
             this.Close(); 
             //OPtionsGUI();

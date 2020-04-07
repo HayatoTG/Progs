@@ -601,7 +601,20 @@ namespace СРИНДЕР
         public void registration(object sender, EventArgs e)
         {
             try
-            {               
+            {
+                string gender = "";
+                if (gendermale.Checked == true)
+                {
+                    gender = "male";
+                    Properties.Settings.Default.genderfind = "female";
+                }
+                if (genderfemale.Checked == true)
+                {
+                    gender = "female";
+                    Properties.Settings.Default.genderfind = "male";
+                }
+
+
                 string connectionString = "mongodb://localhost:27017";
                 MongoClient client = new MongoClient(connectionString);
                 var database = client.GetDatabase("оДНОгруппники");
@@ -630,6 +643,7 @@ namespace СРИНДЕР
                  {"E-mail", $"{textbox3.Text}"},
                  {"name", $"{namestr}"},
                  {"age", Convert.ToInt32(age.Value)},
+                 {"gender", $"{gender}"},
                  {"photo", img},
                  {"info", ""}
                 };              

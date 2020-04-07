@@ -44,7 +44,6 @@ namespace СРИНДЕР
             //    this.ForeColor = Color.White;
 
             //}
-            profilename = new Label();
             profileimage = new PictureBox();            
             labelnameage = new Label();
             labelnameage.Location = new Point(70, 18);
@@ -53,7 +52,6 @@ namespace СРИНДЕР
             profileimage.Width = 200;
             profileimage.Height = 220;
             profileimage.SizeMode = PictureBoxSizeMode.StretchImage;
- 
             profileimage.BorderStyle = BorderStyle.FixedSingle;
             editprofile = new Button();
             editprofile.Location = new Point(5, 274);
@@ -82,7 +80,7 @@ namespace СРИНДЕР
             findcouple.Height = 58;
             findcouple.Text = "ПОИСК ПАРЫ";
             findcouple.FlatStyle = FlatStyle.Flat;
-            //findcouple.Click += ;
+            findcouple.Click += CopuleFindGUI;
             pnl = new Panel();
             pnl.Location = new Point(388, 0);
             pnl.Width = 10;
@@ -196,7 +194,73 @@ namespace СРИНДЕР
         public void form4closed(object sender, EventArgs e)
         {
             DataLoad();
-        } 
+        }
+        private void CopuleFindGUI(object sender, EventArgs e)
+        {
+            this.Controls.Remove(options);
+            this.Controls.Remove(messages);
+            this.Controls.Remove(notifications);
+            this.Controls.Remove(findcouple);
+
+            string connectionString = "mongodb://localhost:27017";
+            MongoClient client = new MongoClient(connectionString);
+            var database = client.GetDatabase("оДНОгруппники");
+            var collection = database.GetCollection<BsonDocument>("accounts");
+
+            //var filter = new BsonDocument("$and", new BsonDocument {
+            //   {"age",new BsonDocument("$gte", Properties.Settings.Default.agemin) },
+            //   {"age",new BsonDocument("$lte", Properties.Settings.Default.agemax) }
+            //});
+
+            var filter = new BsonDocument("$and", new BsonArray{
+
+                new BsonDocument("age",new BsonDocument("$gte", 18)),
+                new BsonDocument("age",new BsonDocument("$lte", 25) ),
+                 new BsonDocument("gender",$"{Properties.Settings.Default.genderfind}" )
+            });
+
+
+
+            var acc = collection.Find(filter).Limit(1).ToList();
+            profileimageCF = new PictureBox();
+            profileimageCF.Location = new Point(545, 43);
+            profileimageCF.Width = 200;
+            profileimageCF.Height = 220;
+            profileimageCF.SizeMode = PictureBoxSizeMode.StretchImage;
+            profileimageCF.BorderStyle = BorderStyle.FixedSingle;
+            labelnameageCF = new Label();
+            labelnameageCF.Location = new Point(580, 18);
+            aboutmeCF = new Label();
+            aboutmeCF.AutoSize = true;
+            infopanelCF = new FlowLayoutPanel();
+            infopanelCF.Location = new Point(560, 452);
+            infopanelCF.BackColor = Color.White;
+            infopanelCF.BorderStyle = BorderStyle.FixedSingle;
+            infopanelCF.AutoScroll = true;
+            //infopanelCF.WrapContents = true;
+            infopanelCF.HorizontalScroll.Visible = false;
+            infopanelCF.Width = 170;
+            infopanelCF.Height = 116;
+            infopanelCF.Controls.Add(aboutmeCF);
+
+
+            //labelnameageCF.Text = $"{acc.GetValue("name")}";
+
+
+            foreach (BsonDocument doc in acc)
+            {
+                labelnameageCF.Text = $"{doc.GetValue("name")}";
+            }
+
+            //acc.GetValue("name")
+            this.Controls.Add(profileimageCF);
+            this.Controls.Add(labelnameageCF);
+            this.Controls.Add(infopanelCF);
+        }
+
+
+
+
         private void Button5_Click(object sender, EventArgs e)
         {
 

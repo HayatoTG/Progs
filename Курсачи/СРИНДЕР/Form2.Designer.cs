@@ -72,7 +72,6 @@
 
         #endregion
         private System.Windows.Forms.PictureBox profileimage;
-        private System.Windows.Forms.Label profilename;
         private System.Windows.Forms.Label labelnameage;
         private System.Windows.Forms.Label aboutme;
         private System.Windows.Forms.Panel panel4;
@@ -87,5 +86,10 @@
         private System.Windows.Forms.Form form3;
         private System.Windows.Forms.Form form4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox profileimageCF;
+        private System.Windows.Forms.Label labelnameageCF;
+        private System.Windows.Forms.Label aboutmeCF;
+        private System.Windows.Forms.Panel infopanelCF;
+
     }
 }

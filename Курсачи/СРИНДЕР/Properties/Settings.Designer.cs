@@ -118,5 +118,17 @@ namespace СРИНДЕР.Properties {
                 this["agemin"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("female")]
+        public string genderfind {
+            get {
+                return ((string)(this["genderfind"]));
+            }
+            set {
+                this["genderfind"] = value;
+            }
+        }
     }
 }
