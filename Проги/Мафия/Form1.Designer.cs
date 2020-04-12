@@ -33,9 +33,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
@@ -43,21 +40,24 @@
             this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.labelmafia1 = new System.Windows.Forms.Label();
-            this.labelmafia2 = new System.Windows.Forms.Label();
-            this.labelmafia3 = new System.Windows.Forms.Label();
             this.labelmafia4 = new System.Windows.Forms.Label();
             this.labelpolice = new System.Windows.Forms.Label();
             this.labeldoc = new System.Windows.Forms.Label();
             this.labelsh = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -94,7 +94,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 34);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Добавить игркока";
+            this.button1.Text = "Добавить игрока";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -110,57 +110,17 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Введите никнейм";
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton1.Location = new System.Drawing.Point(452, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(102, 24);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.Text = "Мафия 1";
-            this.radioButton1.UseVisualStyleBackColor = false;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton2.Location = new System.Drawing.Point(452, 59);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(102, 24);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.Text = "Мафия 2";
-            this.radioButton2.UseVisualStyleBackColor = false;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton3.Location = new System.Drawing.Point(452, 98);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(102, 24);
-            this.radioButton3.TabIndex = 7;
-            this.radioButton3.Text = "Мафия 3";
-            this.radioButton3.UseVisualStyleBackColor = false;
-            // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.BackColor = System.Drawing.Color.Transparent;
             this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton4.Location = new System.Drawing.Point(452, 142);
+            this.radioButton4.Location = new System.Drawing.Point(483, 138);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(102, 24);
+            this.radioButton4.Size = new System.Drawing.Size(67, 24);
             this.radioButton4.TabIndex = 8;
-            this.radioButton4.Text = "Мафия 4";
+            this.radioButton4.Text = "Босс";
             this.radioButton4.UseVisualStyleBackColor = false;
             // 
             // radioButton5
@@ -169,7 +129,7 @@
             this.radioButton5.BackColor = System.Drawing.Color.Transparent;
             this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton5.Location = new System.Drawing.Point(452, 180);
+            this.radioButton5.Location = new System.Drawing.Point(483, 176);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(108, 24);
             this.radioButton5.TabIndex = 9;
@@ -182,7 +142,7 @@
             this.radioButton6.BackColor = System.Drawing.Color.Transparent;
             this.radioButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton6.Location = new System.Drawing.Point(452, 218);
+            this.radioButton6.Location = new System.Drawing.Point(483, 214);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(89, 24);
             this.radioButton6.TabIndex = 10;
@@ -195,7 +155,7 @@
             this.radioButton7.BackColor = System.Drawing.Color.Transparent;
             this.radioButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton7.Location = new System.Drawing.Point(452, 260);
+            this.radioButton7.Location = new System.Drawing.Point(483, 256);
             this.radioButton7.Name = "radioButton7";
             this.radioButton7.Size = new System.Drawing.Size(164, 24);
             this.radioButton7.TabIndex = 11;
@@ -208,7 +168,7 @@
             this.radioButton8.BackColor = System.Drawing.Color.Transparent;
             this.radioButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton8.Location = new System.Drawing.Point(452, 302);
+            this.radioButton8.Location = new System.Drawing.Point(483, 298);
             this.radioButton8.Name = "radioButton8";
             this.radioButton8.Size = new System.Drawing.Size(161, 24);
             this.radioButton8.TabIndex = 12;
@@ -218,9 +178,9 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(619, 311);
+            this.listBox2.Location = new System.Drawing.Point(650, 307);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(149, 173);
+            this.listBox2.Size = new System.Drawing.Size(149, 95);
             this.listBox2.TabIndex = 13;
             // 
             // button2
@@ -233,46 +193,13 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // labelmafia1
-            // 
-            this.labelmafia1.AutoSize = true;
-            this.labelmafia1.BackColor = System.Drawing.Color.Transparent;
-            this.labelmafia1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelmafia1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelmafia1.Location = new System.Drawing.Point(575, 24);
-            this.labelmafia1.Name = "labelmafia1";
-            this.labelmafia1.Size = new System.Drawing.Size(0, 20);
-            this.labelmafia1.TabIndex = 15;
-            // 
-            // labelmafia2
-            // 
-            this.labelmafia2.AutoSize = true;
-            this.labelmafia2.BackColor = System.Drawing.Color.Transparent;
-            this.labelmafia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelmafia2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelmafia2.Location = new System.Drawing.Point(575, 62);
-            this.labelmafia2.Name = "labelmafia2";
-            this.labelmafia2.Size = new System.Drawing.Size(0, 20);
-            this.labelmafia2.TabIndex = 16;
-            // 
-            // labelmafia3
-            // 
-            this.labelmafia3.AutoSize = true;
-            this.labelmafia3.BackColor = System.Drawing.Color.Transparent;
-            this.labelmafia3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelmafia3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelmafia3.Location = new System.Drawing.Point(575, 104);
-            this.labelmafia3.Name = "labelmafia3";
-            this.labelmafia3.Size = new System.Drawing.Size(0, 20);
-            this.labelmafia3.TabIndex = 17;
-            // 
             // labelmafia4
             // 
             this.labelmafia4.AutoSize = true;
             this.labelmafia4.BackColor = System.Drawing.Color.Transparent;
             this.labelmafia4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelmafia4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelmafia4.Location = new System.Drawing.Point(575, 146);
+            this.labelmafia4.Location = new System.Drawing.Point(606, 142);
             this.labelmafia4.Name = "labelmafia4";
             this.labelmafia4.Size = new System.Drawing.Size(0, 20);
             this.labelmafia4.TabIndex = 18;
@@ -283,7 +210,7 @@
             this.labelpolice.BackColor = System.Drawing.Color.Transparent;
             this.labelpolice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelpolice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelpolice.Location = new System.Drawing.Point(575, 184);
+            this.labelpolice.Location = new System.Drawing.Point(606, 180);
             this.labelpolice.Name = "labelpolice";
             this.labelpolice.Size = new System.Drawing.Size(0, 20);
             this.labelpolice.TabIndex = 19;
@@ -294,7 +221,7 @@
             this.labeldoc.BackColor = System.Drawing.Color.Transparent;
             this.labeldoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labeldoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labeldoc.Location = new System.Drawing.Point(575, 222);
+            this.labeldoc.Location = new System.Drawing.Point(606, 218);
             this.labeldoc.Name = "labeldoc";
             this.labeldoc.Size = new System.Drawing.Size(0, 20);
             this.labeldoc.TabIndex = 20;
@@ -305,43 +232,16 @@
             this.labelsh.BackColor = System.Drawing.Color.Transparent;
             this.labelsh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelsh.ForeColor = System.Drawing.Color.Fuchsia;
-            this.labelsh.Location = new System.Drawing.Point(636, 264);
+            this.labelsh.Location = new System.Drawing.Point(667, 260);
             this.labelsh.Name = "labelsh";
             this.labelsh.Size = new System.Drawing.Size(0, 20);
             this.labelsh.TabIndex = 21;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(560, 18);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(208, 31);
-            this.panel1.TabIndex = 22;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(560, 57);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(208, 31);
-            this.panel2.TabIndex = 23;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(560, 97);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(208, 31);
-            this.panel3.TabIndex = 24;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(560, 140);
+            this.panel4.Location = new System.Drawing.Point(591, 136);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(208, 31);
             this.panel4.TabIndex = 25;
@@ -350,7 +250,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Location = new System.Drawing.Point(560, 180);
+            this.panel5.Location = new System.Drawing.Point(591, 176);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(208, 31);
             this.panel5.TabIndex = 26;
@@ -359,7 +259,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Location = new System.Drawing.Point(560, 217);
+            this.panel6.Location = new System.Drawing.Point(591, 213);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(208, 31);
             this.panel6.TabIndex = 27;
@@ -368,7 +268,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.Transparent;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Location = new System.Drawing.Point(622, 260);
+            this.panel7.Location = new System.Drawing.Point(653, 256);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(146, 31);
             this.panel7.TabIndex = 28;
@@ -383,20 +283,103 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.radioButton1.Location = new System.Drawing.Point(483, 16);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(87, 24);
+            this.radioButton1.TabIndex = 5;
+            this.radioButton1.Text = "Мафия";
+            this.radioButton1.UseVisualStyleBackColor = false;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(650, 18);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(149, 95);
+            this.listBox3.TabIndex = 30;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox1.Location = new System.Drawing.Point(473, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(345, 412);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "В игре";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(39, 452);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(131, 34);
+            this.button4.TabIndex = 32;
+            this.button4.Text = "Удалить игрока";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox2.Location = new System.Drawing.Point(473, 422);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(345, 108);
+            this.groupBox2.TabIndex = 33;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Команды";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(10, 25);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(303, 21);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(10, 66);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(213, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // button5
+            // 
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(238, 58);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 39);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Сохранить";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::Randomizer.Properties.Resources._12r;
-            this.ClientSize = new System.Drawing.Size(829, 533);
+            this.ClientSize = new System.Drawing.Size(829, 537);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.listBox3);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.labelsh);
             this.Controls.Add(this.labeldoc);
             this.Controls.Add(this.labelpolice);
             this.Controls.Add(this.labelmafia4);
-            this.Controls.Add(this.labelmafia3);
-            this.Controls.Add(this.labelmafia2);
-            this.Controls.Add(this.labelmafia1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.radioButton8);
@@ -404,26 +387,25 @@
             this.Controls.Add(this.radioButton6);
             this.Controls.Add(this.radioButton5);
             this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Мафия";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,9 +418,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton6;
@@ -446,21 +425,23 @@
         private System.Windows.Forms.RadioButton radioButton8;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label labelmafia1;
-        private System.Windows.Forms.Label labelmafia2;
-        private System.Windows.Forms.Label labelmafia3;
         private System.Windows.Forms.Label labelmafia4;
         private System.Windows.Forms.Label labelpolice;
         private System.Windows.Forms.Label labeldoc;
         private System.Windows.Forms.Label labelsh;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

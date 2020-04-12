@@ -7,6 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MongoDB.Bson;
+using MongoDB.Driver.Core;
+using MongoDB.Driver.Linq;
+using MongoDB.Driver;
+using MongoDB.Bson.Serialization.Attributes;
+
 
 namespace Randomizer
 {
@@ -65,7 +71,7 @@ namespace Randomizer
             }
             else
             {
-                if (radioButton1.Checked == false && radioButton2.Checked == false && radioButton3.Checked == false && radioButton4.Checked == false && radioButton5.Checked == false && radioButton6.Checked == false && radioButton7.Checked == false && radioButton8.Checked == false)
+                if (radioButton1.Checked == false &&  radioButton4.Checked == false && radioButton5.Checked == false && radioButton6.Checked == false && radioButton7.Checked == false && radioButton8.Checked == false)
                 {
                     MessageBox.Show("Выберите роль");
                 }
@@ -73,30 +79,12 @@ namespace Randomizer
                 {
                     if (radioButton1.Checked == true)
                     {
-                        if (labelmafia1.Text == "")
+                        if (listBox3.Items.Count < 3)
                         {
-                            labelmafia1.Text = listBox1.SelectedItem.ToString();
+                            listBox3.Items.Add(listBox1.SelectedItem);
                             listBox1.Items.RemoveAt(listBox1.SelectedIndex);
                         }
-                        else MessageBox.Show("Игрок уже назначен");
-                    }
-                    if (radioButton2.Checked == true)
-                    {
-                        if (labelmafia2.Text == "")
-                        {
-                            labelmafia2.Text = listBox1.SelectedItem.ToString();
-                            listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-                        }
-                        else MessageBox.Show("Игрок уже назначен");
-                    }
-                    if (radioButton3.Checked == true)
-                    {
-                        if (labelmafia3.Text == "")
-                        {
-                            labelmafia3.Text = listBox1.SelectedItem.ToString();
-                            listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-                        }
-                        else MessageBox.Show("Игрок уже назначен");
+                        else MessageBox.Show("Максимальное кол-во игроков");
                     }
                     if (radioButton4.Checked == true)
                     {
@@ -153,19 +141,24 @@ namespace Randomizer
         private void Form1_Load(object sender, EventArgs e)
         {
             this.BackgroundImageLayout = ImageLayout.Stretch;
+            TeamData();
+            comboBox1.SelectedValueChanged += PresetLoad;
         }
+        public class Team
+        {
+            [BsonId]
+            public string teamname;
+            public string[] mafia = new string[3];
+            public string boss;
+            public string police;
+            public string doc;
+            public string sh;
+            public string[] mirn = new string[9];
 
+        }
         private void Button3_Click(object sender, EventArgs e)
         {
-            if (labelmafia1.Text != "")
-                listBox1.Items.Add(labelmafia1.Text);
-            labelmafia1.Text = "";
-            if (labelmafia2.Text != "")
-                listBox1.Items.Add(labelmafia2.Text);
-            labelmafia2.Text = "";
-            if (labelmafia3.Text != "")
-                listBox1.Items.Add(labelmafia3.Text);
-            labelmafia3.Text = "";
+            
             if (labelmafia4.Text != "")
                 listBox1.Items.Add(labelmafia4.Text);
             labelmafia4.Text = "";
@@ -184,7 +177,89 @@ namespace Randomizer
             }
             listBox2.Items.Clear();
         }
+        public void TeamData()
+        {
+            comboBox1.Items.Clear();
+            string connectionString = "mongodb://localhost:27017";
+            MongoClient client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Mafia");
+            var collection = database.GetCollection<BsonDocument>("Teams");
+            var filter = new BsonDocument();
+            var tm = collection.Find(filter).ToList();
+            foreach (var doc in tm)
+            {
+                comboBox1.Items.Add($"{doc.GetValue("_id")}");
+            }
+        }
+        private void PresetLoad(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+            listBox3.Items.Clear();
+            string connectionString = "mongodb://localhost:27017";
+            MongoClient client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Mafia");
+            var collection = database.GetCollection<BsonDocument>("Teams");
+            var filter = new BsonDocument {
 
-        
+               {"_id",$"{comboBox1.SelectedItem}"},
+
+            };
+            var tm = collection.Find(filter).ToList();
+            BsonValue mafia = null;
+            BsonValue citizens = null;
+            foreach (var doc in tm)
+            {
+
+                mafia = doc.GetValue("mafia");
+                citizens = doc.GetValue("mirn");
+                if (doc.GetValue("boss") != BsonNull.Value)
+                    labelmafia4.Text = $"{doc.GetValue("boss")}";
+                if (doc.GetValue("police") != BsonNull.Value)
+                    labelpolice.Text = $"{doc.GetValue("police")}";
+                if (doc.GetValue("doc") != BsonNull.Value)
+                    labeldoc.Text = $"{doc.GetValue("doc")}";
+                if (doc.GetValue("sh") != BsonNull.Value)
+                    labelsh.Text = $"{doc.GetValue("sh")}";
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                if (mafia[i] != BsonNull.Value)
+                {
+                    listBox3.Items.Add($"{mafia[i]}");
+                }
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                if (citizens[i] != BsonNull.Value)
+                {
+                    listBox2.Items.Add($"{citizens[i]}");
+                }
+            }
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            string connectionString = "mongodb://localhost:27017";
+            MongoClient client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Mafia");
+            var collection = database.GetCollection<BsonDocument>("Teams");
+            Team tm = new Team();
+
+            tm.teamname = textBox2.Text;
+            for (int i = 0; i < listBox3.Items.Count; i++)
+            {
+                tm.mafia[i] = $"{listBox3.Items[i]}";
+            }
+            tm.boss = labelmafia4.Text;
+            tm.police = labelpolice.Text;
+            tm.doc = labeldoc.Text;
+            tm.sh = labelsh.Text;        
+            for (int i = 0; i < listBox2.Items.Count; i++)
+            {
+                tm.mirn[i] = $"{listBox2.Items[i]}"; ;
+            }
+            collection.InsertOne(tm.ToBsonDocument()); ;
+            TeamData();
+        }
     }
 }
