@@ -61,6 +61,8 @@
             this.comand = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.Cle = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -370,11 +372,34 @@
             this.comboBox3.Size = new System.Drawing.Size(207, 21);
             this.comboBox3.TabIndex = 50;
             // 
+            // Cle
+            // 
+            this.Cle.Location = new System.Drawing.Point(276, 258);
+            this.Cle.Name = "Cle";
+            this.Cle.Size = new System.Drawing.Size(108, 21);
+            this.Cle.TabIndex = 51;
+            this.Cle.Text = "Очистить роли";
+            this.Cle.UseVisualStyleBackColor = true;
+            this.Cle.Visible = false;
+            this.Cle.Click += new System.EventHandler(this.Cle_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(120, 229);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(105, 50);
+            this.button5.TabIndex = 52;
+            this.button5.Text = "Случайно назначить роли";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 297);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.Cle);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel2);
@@ -444,6 +469,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button Cle;
+        private System.Windows.Forms.Button button5;
     }
 }
 

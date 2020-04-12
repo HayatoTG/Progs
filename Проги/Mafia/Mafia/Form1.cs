@@ -72,6 +72,7 @@ namespace Mafia
                     name.Text = "";
                 panel1.Visible = true;
                 button1.Visible = true;
+                Cle.Visible = true;
             }
           
         }
@@ -253,7 +254,7 @@ namespace Mafia
                         }
                         else { MessageBox.Show("Достигнуто максимальное кол-во игроков"); }
                     }
-                    if (comboBox1.Items.Count != 0 && comboBox2.Items.Count != 0 && label8.Text != null && label9.Text != null && label10.Text != null)
+                    if (comboBox1.Items.Count != 0 && comboBox2.Items.Count != 0 && label8.Text != "" && label9.Text != "" && label10.Text != "")
                         panel2.Visible = true;
                 }
                 //panel2.Visible = true;
@@ -277,6 +278,51 @@ namespace Mafia
             //    }
 
             //}
+        }
+
+        private void Cle_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Items.Count != 0 && comboBox2.Items.Count != 0 && label8.Text != "" && label9.Text != "" && label10.Text != "")
+            {
+                comboBox1.Items.Clear();
+                comboBox2.Items.Clear();
+                label8.Text = "";
+                label9.Text = "";
+                label10.Text = "";
+                panel2.Visible = false;
+            }
+            else MessageBox.Show("Не заполнены остальные роли");
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count == 16)
+            {
+                int rnd = 0;
+                Random rand = new Random();
+                for (int i = 0; i < 4; i++)
+                {
+                    rnd = rand.Next(0, 16 - i);
+                    comboBox1.Items.Add(listBox1.Items[rnd]);
+                    listBox1.Items.Remove(listBox1.Items[rnd]);
+                }
+                for (int i = 0; i < 9; i++)
+                {
+                    rnd = rand.Next(0, 12 - i);
+                    comboBox2.Items.Add(listBox1.Items[rnd]);
+                    listBox1.Items.Remove(listBox1.Items[rnd]);
+                }
+                rnd = rand.Next(0, 3);
+                label8.Text = $"{listBox1.Items[rnd]}";
+                listBox1.Items.Remove(listBox1.Items[rnd]);
+                rnd = rand.Next(0, 2);
+                label9.Text = $"{listBox1.Items[rnd]}";
+                listBox1.Items.Remove(listBox1.Items[rnd]);
+                rnd = rand.Next(0, 1);
+                label10.Text = $"{listBox1.Items[rnd]}";
+                listBox1.Items.Remove(listBox1.Items[rnd]);
+            }
+            else { MessageBox.Show("Игроков должно быть 16"); }
         }
     }
 }
