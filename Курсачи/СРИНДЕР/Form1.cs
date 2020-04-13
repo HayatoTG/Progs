@@ -637,6 +637,9 @@ namespace СРИНДЕР
                     else c[i] = Char.ToLower(textbox4.Text[i]);
                 }
                 namestr = new string(c);
+
+                //Array.Resize(ref stry,12);
+
                 BsonDocument account = new BsonDocument {
                  {"_id",$"{textbox1.Text}"},
                  {"password", $"{textbox2.Text}"},
@@ -645,14 +648,14 @@ namespace СРИНДЕР
                  {"age", Convert.ToInt32(age.Value)},
                  {"gender", $"{gender}"},
                  {"photo", img},
-                 {"info", ""}
+                 {"info",""},              
                 };              
                 collection.InsertOne(account);
                 MessageBox.Show("Регистрация успешна\n      Теперь войдите");
                 loginGUIload();
-            }
-            catch { MessageBox.Show("Нет соединение с сервером"); }
         }
+            catch { MessageBox.Show("Нет соединение с сервером"); }
+}
         public void logIN(object sender, EventArgs e)
         {
             try

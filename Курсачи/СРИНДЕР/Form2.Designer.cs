@@ -29,15 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // panel4
-            // 
-            resources.ApplyResources(this.panel4, "panel4");
-            this.panel4.Name = "panel4";
             // 
             // panel3
             // 
@@ -45,21 +38,11 @@
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
             // 
-            // button5
-            // 
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
-            // 
             // Form2
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -74,7 +57,6 @@
         private System.Windows.Forms.PictureBox profileimage;
         private System.Windows.Forms.Label labelnameage;
         private System.Windows.Forms.Label aboutme;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel pnl;
         private System.Windows.Forms.Button editprofile;
         private System.Windows.Forms.Button messages;
@@ -85,11 +67,15 @@
         private System.Windows.Forms.Button options;
         private System.Windows.Forms.Form form3;
         private System.Windows.Forms.Form form4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox profileimageCF;
         private System.Windows.Forms.Label labelnameageCF;
         private System.Windows.Forms.Label aboutmeCF;
         private System.Windows.Forms.Panel infopanelCF;
-
+        private System.Windows.Forms.Label textinfo;
+        private System.Windows.Forms.Label textinfoCF;
+        private System.Windows.Forms.Button backbutton;
+        private System.Windows.Forms.Button buttonfocus;
+        private System.Windows.Forms.PictureBox like;
+        private System.Windows.Forms.PictureBox dislike;
     }
 }

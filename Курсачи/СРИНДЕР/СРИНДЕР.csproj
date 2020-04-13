@@ -195,6 +195,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\like.png" />
+    <None Include="Resources\dislike.png" />
     <None Include="Resources\options.png" />
     <None Include="Resources\err.png" />
     <None Include="Resources\ok.png" />
